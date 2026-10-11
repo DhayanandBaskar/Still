@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src still-image: https: http: data:; connect-src 'none'; base-uri 'none'; form-action 'none';">
+  <title>Still</title>
+  <style>/*STILL_STYLE*/</style>
+</head>
+<body>
+  <section id="welcome" aria-label="Welcome to Still">
+    <div class="welcome-inner">
+      <div class="page-symbol" aria-hidden="true"><span>S</span></div>
+      <h1>Markdown, simply.</h1>
+      <p class="welcome-copy">A quiet place to read.<br>Open a file. Leave the distractions behind.</p>
+      <button id="open-file"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10H3z"/><path d="M3 10h18"/></svg>Open Markdown<span class="shortcut">⌘ O</span></button>
+      <p class="drop-hint">or drop a .md file anywhere</p>
+    </div>
+    <div class="welcome-bottom">Read in Still. Write in your favorite editor.</div>
+  </section>
+  <main id="document" hidden>
+    <header class="document-meta"><span id="file-label"></span><span class="meta-dot">·</span><span id="reading-time"></span></header>
+    <article id="article" aria-label="Markdown document"></article>
+    <div id="empty-document" hidden><h1>A blank page.</h1><p>This file is empty. Add some words in your editor; they’ll appear here.</p></div>
+    <footer class="document-end"><span>End of document</span></footer>
+  </main>
+  <div id="focus-hint" role="status">A little less noise.<span>esc to return</span></div>
+  <div id="progress" aria-hidden="true"></div>
+  <script>/*STILL_MARKED*/</script>
+  <script>/*STILL_PURIFY*/</script>
+  <script>/*STILL_READER*/</script>
+</body>
+</html>

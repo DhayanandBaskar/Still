@@ -1,0 +1,10 @@
+{
+  "marked": {
+    "version": "18.1.0",
+    "sha256": "f424dcb508fdf93e0137a970cfce8f3207ea2e3f37eca5f7556a52875683632a"
+  },
+  "DOMPurify": {
+    "version": "3.4.16",
+    "sha256": "2c90a9b46d6463f26038a29b686e82bc91de01fdac9d5229e7cfe3b360134ea2"
+  }
+}
