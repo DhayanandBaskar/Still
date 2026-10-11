@@ -1,0 +1,10 @@
+Still
+Copyright 2026 Dhayanand Baskar
+
+Licensed under the Apache License, Version 2.0.
+See LICENSE for the full terms.
+
+Bundled third-party components retain their own licenses:
+- Marked: MIT; see Resources/marked-LICENSE.txt.
+- DOMPurify: Apache-2.0 OR MPL-2.0; see Resources/DOMPurify-LICENSE.txt
+  and Resources/DOMPurify-LICENSE-MPL.txt.

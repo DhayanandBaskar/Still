@@ -2,11 +2,15 @@
 
 A small, native macOS app for reading Markdown. A clean white page inspired by Typora, comfortable typography, and a quiet window. **It never edits or saves your Markdown files.**
 
+**Free and open source under [Apache 2.0](LICENSE).** [Download for Mac](https://github.com/DhayanandBaskar/Still/releases/latest/download/Still.dmg) · [Screenshots and setup guide](https://dhayanandbaskar.github.io/apps/still/) · [Release notes and checksum](https://github.com/DhayanandBaskar/Still/releases/latest)
+
+![Still reading its bundled Welcome.md with a nested heading outline](https://dhayanandbaskar.github.io/apps/assets/screenshots/still-reader.jpg)
+
 ## Run
 
 Download the DMG from this repository’s Releases, open it, and drag **Still** into **Applications**. Launch Still, then open or drop a `.md` or `.markdown` file. Finder’s **Open With → Still** also works. A local source build produces `build/Still.app`, which can also be launched directly.
 
-Requires macOS 13 or newer. The included build runs on Apple silicon; the build script also supports Intel Macs when run on an Intel host. This local build is signed ad hoc, rather than notarized for distribution.
+Requires macOS 13 or newer. The downloadable build runs on Apple silicon. Intel users can build from source on their Mac using the same script. The release is signed ad hoc and is not notarized. If macOS blocks the first launch, use **System Settings → Privacy & Security → Open Anyway** for Still.
 
 ## Build from source
 
@@ -30,6 +34,12 @@ To build a disk image with the app and an Applications shortcut:
 ```
 
 The DMG and its SHA-256 checksum appear in `build/`. Use `./scripts/make-dmg.sh --skip-build` to package an existing build.
+
+To keep a release build separate from your development app:
+
+```sh
+STILL_BUILD_DIR="$PWD/build/release" ./scripts/make-dmg.sh
+```
 
 ## Reading
 
@@ -75,3 +85,7 @@ Third-party licenses and pinned resource hashes are included under `Resources/`.
 Run `./scripts/test.sh` to check the actual reader in macOS WebKit. This verifies GFM rendering, preserved code text, local image loading, heading targets, empty files, appearance controls, read-only task lists, and removal of document scripts, forms, event handlers, and editable elements. Native image-handler checks cover path traversal and invalid requests. File-monitor checks exercise in-place saves, atomic replacement, writes to the new inode, and deletion followed by recreation. The test harnesses create disposable fixtures in the system temporary directory.
 
 Run `bash scripts/test-window.sh` to check the actual app window: compact toolbar, visible traffic lights, maximize and restore, nested heading navigation, independent section collapse, the adjustable 70/30 split, separate scrolling, toolbar collapse and expansion, minimize, and close. AppKit checks require a macOS desktop session.
+
+## License
+
+Copyright 2026 Dhayanand Baskar. Still's original source code is licensed under the [Apache License, Version 2.0](LICENSE). See [NOTICE](NOTICE) for attribution. Marked and DOMPurify retain their own licenses, included under `Resources/` and inside the app bundle. The downloadable DMG also includes LICENSE and NOTICE.
